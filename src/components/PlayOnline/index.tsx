@@ -61,7 +61,6 @@ export function PlayOnline({
   socket?.on("end-game", (win) => {
     setTimeout(() => {
       setEnd(true);
-      console.log(win);
 
       setlayerWins(win);
     }, 100);

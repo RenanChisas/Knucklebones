@@ -105,11 +105,9 @@ export function SelectCharacter({
       setCharactersChoose([playerid, event.target.value, SelectCharacter]);
     }
   };
-  console.log(rooms);
   const playOnline = () => {
     if (inputName.length > 0) {
       let idAUX = "";
-      console.log(rooms);
       if (id) {
         idAUX = id;
       } else {

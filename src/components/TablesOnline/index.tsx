@@ -127,8 +127,6 @@ export function TablesOnline({
     const sumAux = data;
     const sumReturn = sumAux.sumReturn;
     const tableReturn = sumAux.tableReturn;
-    console.log(sumReturn, "sumReturn");
-    console.log(tableReturn, "tableReturn");
     if (watchPlayer) {
       updateColors(sumAux.tableReturn);
       setSum(sumAux.sumReturn);

@@ -46,7 +46,6 @@ export function OnlineControler({ socketRef }: OnlineControlerProps) {
     if (!socket) return;
 
     const handlePlayers = (players: string[][]) => {
-      console.log("PLAYERS:", players);
       setFullromm(false);
       const me = players.find((player) => player[0] === socket.id);
       const other = players.find((player) => player[0] !== socket.id);
