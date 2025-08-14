@@ -89,3 +89,16 @@
     font-size: 0.95rem;
   }
 }
+
+@media screen and (orientation: portrait) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* Landscape */
+@media screen and (orientation: landscape) {
+  body {
+    background-color: lightgreen;
+  }
+}

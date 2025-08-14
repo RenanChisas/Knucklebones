@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.head {
+  font-size: 80%;
+  color: white;
+}
+
+.qrcode {
+  width: 50%;
+  height: auto;
+}
+.qrcode svg {
+  width: 100%;
+  height: auto;
+}
+.input {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.input input {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  font-size: 100%;
+  background-color: #fb273a;
+  color: white;
+  border: 1px solid #fb273a;
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  text-decoration: none;
+}
+.copy {
+  text-align: center;
+  padding: 1rem;
+  font-size: 100%;
+  background-color: #fb273a;
+  color: white;
+
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  text-decoration: none;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.copy:hover {
+  filter: brightness(80%);
+  border: 1px solid #fb273a;
+}

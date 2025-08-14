@@ -1,0 +1,35 @@
+.quit {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quit button {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  background-color: #fb273a;
+
+  color: #ffffff;
+  font-weight: bold;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.quit h3 {
+  margin-top: -0.25rem;
+}
+
+.quit button:hover {
+  filter: brightness(90%);
+}

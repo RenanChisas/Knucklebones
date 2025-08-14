@@ -1,0 +1,61 @@
+.tabPlayer1 {
+  display: flex;
+  justify-content: center;
+}
+
+.tabLine {
+  display: flex;
+  border: 0.5rem solid transparent;
+}
+
+.hover button {
+  border: 0.5rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.hover button:hover {
+  border: 0.5rem solid red;
+  background-color: red;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.hoverSelect button:hover {
+  border: 0.5rem solid #0f0f0f;
+  background-color: #0f0f0f;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.tab {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.tabchoose {
+  display: flex;
+
+  justify-content: center;
+  background-color: #19150f;
+  color: white;
+  width: 7.5rem;
+  max-height: 5rem;
+
+  height: auto;
+}
+
+.label {
+  font-size: 1.8rem;
+  color: #0f0f0f;
+}
+
+.dices {
+  color: #f4e7cb;
+  font-size: 5rem;
+}
+
+.color1 {
+  color: #efd57e;
+}
+.color2 {
+  color: #598fac;
+}

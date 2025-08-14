@@ -7,9 +7,10 @@ import { WaveText } from "../waveText";
 
 type homeProps = {
   setbot: (value: boolean) => void;
+  loading: boolean;
 };
 
-export function Home({ setbot }: homeProps) {
+export function Home({ setbot, loading }: homeProps) {
   const navigate = useNavigate();
 
   const playLocal = () => {
@@ -20,6 +21,11 @@ export function Home({ setbot }: homeProps) {
     setbot(true);
     navigate(`/SelectCharacter`);
   };
+  const playOnline = () => {
+    setbot(true);
+    navigate(`/Online`);
+  };
+
   return (
     <div className={styles.home}>
       <div className={styles.name}>
@@ -49,14 +55,26 @@ export function Home({ setbot }: homeProps) {
         </div>
       </div>
       <div className={styles.buttons}>
-        <motion.button
-          whileHover={{ scale: 1.1, backgroundColor: "#fb273a" }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <span>
-            Play Online <FaLock />
-          </span>
-        </motion.button>
+        {loading ? (
+          <motion.button
+            whileHover={{ scale: 1.1, backgroundColor: "#fb273a" }}
+            whileTap={{ scale: 0.9 }}
+            onClick={playOnline}
+            disabled={true}
+          >
+            <span>
+              Play Online <FaLock />{" "}
+            </span>
+          </motion.button>
+        ) : (
+          <motion.button
+            whileHover={{ scale: 1.1, backgroundColor: "#fb273a" }}
+            whileTap={{ scale: 0.9 }}
+            onClick={playOnline}
+          >
+            <span>Play Online</span>
+          </motion.button>
+        )}
         <motion.button
           whileHover={{ scale: 1.1, backgroundColor: "#fb273a" }}
           whileTap={{ scale: 0.9 }}

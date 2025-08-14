@@ -9,6 +9,7 @@ export function NotFound() {
 
   const handleHome = () => {
     navigate(`/`);
+    window.location.reload();
   };
 
   return (
