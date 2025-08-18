@@ -12,6 +12,7 @@ import { ScreenVerseOnline } from "./components/ScreenVerseOnline";
 
 import type { Socket } from "socket.io-client";
 import { OnlineControler } from "./components/OnlineController";
+import { Howtoplay } from "./components/Howtoplay";
 
 function App() {
   const [bot, setbot] = useState(false);
@@ -36,7 +37,7 @@ function App() {
       <Route path="/playai" element={<PlayAI />} />
       <Route path="/playLocal" element={<PlayLocal />} />
       <Route path="/SelectCharacter" element={<ScreenVerse isbot={bot} />} />
-
+      <Route path="/howtoplay" element={<Howtoplay />} />
       {loading ? (
         ""
       ) : (

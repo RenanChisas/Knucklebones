@@ -25,6 +25,9 @@ export function Home({ setbot, loading }: homeProps) {
     setbot(true);
     navigate(`/Online`);
   };
+  const howtoplayNav = () => {
+    navigate(`/howtoplay`);
+  };
 
   return (
     <div className={styles.home}>
@@ -92,10 +95,9 @@ export function Home({ setbot, loading }: homeProps) {
         <motion.button
           whileHover={{ scale: 1.1, backgroundColor: "#fb273a" }}
           whileTap={{ scale: 0.9 }}
+          onClick={howtoplayNav}
         >
-          <span>
-            how to play <FaLock />{" "}
-          </span>
+          <span>how to play </span>
         </motion.button>
       </div>
     </div>
