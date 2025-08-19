@@ -34,8 +34,6 @@ export function TablesOnline({
   room,
   socket,
   watchPlayer,
-  rollEnd,
-  click,
 }: TablesProps) {
   const [sum, setSum] = useState<SumItem[]>([
     { sumReturn: 0, isZero: true },
@@ -45,6 +43,7 @@ export function TablesOnline({
     { sumReturn: 0, isZero: true },
     { sumReturn: 0, isZero: true },
   ]);
+  const [clickTrue, setClickTrue] = useState<boolean>(false);
   const [tablesColor, settablesColor] = useState([
     [
       [0, 0, 0],
@@ -68,11 +67,17 @@ export function TablesOnline({
     );
   };
 
+  if (!clickTrue) {
+    setTimeout(() => {
+      setClickTrue(true);
+    }, 1000);
+  }
   const ChooseLine = (number: 0 | 1 | 2) => {
-    if (click) {
-      if (rollEnd) {
-        socket?.emit("adddice-room", room, number, dice, player);
-      }
+    if (clickTrue) {
+      socket?.emit("adddice-room", room, number, dice, player);
+      console.log("yessss ");
+    } else {
+      console.log("NOOOO ");
     }
   };
 

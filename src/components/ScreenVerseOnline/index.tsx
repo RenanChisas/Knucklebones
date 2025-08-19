@@ -23,27 +23,25 @@ export function ScreenVerseOnline({ socketRef }: ScreenVerseOnlineProps) {
 
   const navigate = useNavigate();
   const [, setCharactersChoosePlayer1] = useState(["", "", ""]);
-  const url = import.meta.env.VITE_BASE_URL;
+
   const [rooms, setRooms] = useState([]);
+  socket?.on("receive-listroom", (data) => {
+    setRooms(data);
+  });
 
   useEffect(() => {
-    fetch(`${url}/listRoom`)
-      .then((res) => res.json())
-      .then((data) => {
-        setRooms(data);
-      })
-      .catch((err) => {
-        console.error("Error fetching status:", err);
-      });
+    socket?.emit("request-listroom");
   }, []);
 
   const GoHome = () => {
+    socket?.disconnect();
     navigate(`/`);
+    window.location.reload();
   };
 
   return (
     <div className={styles.main}>
-      <div className={styles.container}>
+      <div className={!id ? styles.container : styles.containerId}>
         <div className={styles.player1}>
           <div className={styles.selectcharacter}>
             <SelectCharacter
@@ -58,6 +56,7 @@ export function ScreenVerseOnline({ socketRef }: ScreenVerseOnlineProps) {
           </div>
         </div>
       </div>
+
       <div className={styles.quit}>
         <button onClick={GoHome}>
           {" "}

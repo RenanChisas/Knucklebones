@@ -81,6 +81,7 @@ export function OnlineControler({ socketRef }: OnlineControlerProps) {
   const GoHome = () => {
     socket?.disconnect();
     navigate(`/`);
+    window.location.reload();
   };
 
   return (
